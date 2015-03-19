@@ -1,0 +1,15 @@
+{
+  "name": "Backbone-Require-Boilerplate",
+  "title": "Backbone and Require Boilerplate",
+  "description": "Backbone and Require Boilerplate for Rapptor Studios",
+  "version": "0.0.1",
+ 
+  "dependencies": {
+    "foundation": null,
+    "backbone": null,
+    "underscore": null,
+    "requirejs": null,
+    "requirejs-text": null,
+    "jquery": null
+  }
+}
