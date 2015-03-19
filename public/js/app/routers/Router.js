@@ -1,6 +1,15 @@
-define(["jquery", "backbone", "models/Model", "views/View", "collections/Collection"],
+define([
+	"jquery",
+	"backbone",
+	"models/Model",
+	"views/View",
+	"collections/Collection",
+	// "modernizr",
+	// "foundation.topbar"
+	],
 
     function($, Backbone, Model, View, Collection) {
+    		// $(document).foundation();
 
         var Router = Backbone.Router.extend({
 
