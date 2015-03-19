@@ -3,12 +3,13 @@ define([
 	"backbone",
 	"models/Model",
 	"views/View",
-	"collections/Collection",
+	"views/CoolView",
+	"collections/Collection"
 	// "modernizr",
 	// "foundation.topbar"
 	],
 
-    function($, Backbone, Model, View, Collection) {
+    function($, Backbone, Model, View, CoolView, Collection) {
     		// $(document).foundation();
 
         var Router = Backbone.Router.extend({
@@ -20,13 +21,18 @@ define([
             },
 
             routes: {
-                "": "index"
+                "": "index",
+                "cool": "renderCool"
 
             },
 
             index: function() {
                 new View();
 
+            },
+
+            renderCool: function(){
+            	new CoolView();
             }
 
         });

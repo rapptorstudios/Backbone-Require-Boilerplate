@@ -1,8 +1,8 @@
-define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
+define(["jquery", "backbone", "models/Model", "text!templates/cool.html"],
 
     function($, Backbone, Model, template){
 
-        var View = Backbone.View.extend({
+        var CoolView = Backbone.View.extend({
 
             // The DOM Element associated with this view
             el: ".main-container",
@@ -29,7 +29,7 @@ define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
 
         });
 
-        return View;
+        return CoolView;
 
     }
 
