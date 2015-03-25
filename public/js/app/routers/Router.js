@@ -1,44 +1,54 @@
 define([
-	"jquery",
-	"backbone",
-	"models/Model",
-	"views/View",
-	"views/CoolView",
-	"collections/Collection"
-	// "modernizr",
-	// "foundation.topbar"
+	'jquery',
+	'backbone',
+
+	// MODELS
+	'models/Club',
+	'models/Comment',
+	'models/Model',
+	'models/Post',
+	'models/User',
+
+	// COLLECTIONS
+	'collections/Clubs',
+	'collections/Collection',
+	'collections/Comments',
+	'collections/Posts',
+	'collections/Users',
+
+	// VIEWS
+	'views/CoolView',
+	'views/UserProfileView',
+	'views/View'
 	],
 
-    function($, Backbone, Model, View, CoolView, Collection) {
-    		// $(document).foundation();
+	function($, Backbone, Club, Comment, Model, Post, User, Clubs, Collection, Comments, Posts, Users, CoolView, UserProfileView, View) {
 
-        var Router = Backbone.Router.extend({
+		var Router = Backbone.Router.extend({
 
-            initialize: function() {
+			initialize: function() {
+				Backbone.history.start();
+			},
 
-                Backbone.history.start();
+			routes: {
+				'': 				'index',
+				'cool': 		'renderCool',
+				'profile': 	'renderUserProfile'
+			},
 
-            },
+			index: function() {
+				new View();
+			},
 
-            routes: {
-                "": "index",
-                "cool": "renderCool"
+			renderCool: function(){
+				new CoolView();
+			},
 
-            },
+			renderUserProfile: function(){
+				new UserProfileView();
+			}
+		});
 
-            index: function() {
-                new View();
-
-            },
-
-            renderCool: function(){
-            	new CoolView();
-            }
-
-        });
-
-        return Router;
-
-    }
-
+		return Router;
+	}
 );
