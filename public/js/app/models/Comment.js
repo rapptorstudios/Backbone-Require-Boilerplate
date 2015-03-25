@@ -2,7 +2,8 @@ define(['jquery', 'backbone'],
 
 	function($, Backbone) {
 
-		var Model = Backbone.Model.extend({
+		var Comment = Backbone.Model.extend({
+			className: 'Comment',
 
 			initialize: function() {
 
@@ -18,7 +19,7 @@ define(['jquery', 'backbone'],
 
 		});
 
-		return Model;
+		return Comment;
 
 	}
 
