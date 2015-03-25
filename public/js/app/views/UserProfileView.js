@@ -6,15 +6,19 @@ define(['jquery',
 	'text!templates/user-cover-photo.html',
 	'text!templates/user-city.html',
 	'text!templates/user-ranking.html',
-	'text!templates/user-friend-list.html'],
+	'text!templates/user-friend-list.html',
+	'text!templates/patrick-attempt.html'],
 
-	function($, Backbone, User, name, profilePhoto, coverPhoto, city, ranking, friendList){
+	function($, Backbone, User, name, profilePhoto, coverPhoto, city, ranking, friendList, patrick){
+
+		window.console && console.log(new User());
 
 		var UserProfileView = Backbone.View.extend({
 
 			el: ".main-container",
 
 			initialize: function() {
+				this.User = new User();
 				this.render();
 			},
 
@@ -29,8 +33,17 @@ define(['jquery',
 				cityTemplate = 					_.template(city);
 				rankingTemplate = 			_.template(ranking);
 				friendListTemplate = 		_.template(friendList);
+				patrickTemp = _.template(patrick);
 
-				this.$el.html(friendListTemplate);
+				var nameTemplateWithData = nameTemplate(this.User.toJSON());
+				var cityTemplateWithData = cityTemplate(this.User.toJSON());
+
+				var userProfileViewLayout = {
+					nameTemplate: nameTemplateWithData,
+					cityTemplate: cityTemplateWithData
+				}
+
+				this.$el.html(patrickTemp(userProfileViewLayout));
 
 				// Maintains chainability
 				return this;

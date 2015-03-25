@@ -10,7 +10,8 @@ define(['jquery', 'backbone'],
 			},
 
 			defaults: {
-
+					city: 'metropolis',
+					username: 'deadpool'
 			},
 
 			validate: function(attrs) {
