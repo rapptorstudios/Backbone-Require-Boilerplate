@@ -1,7 +1,6 @@
 define(['jquery',
 	'backbone',
-	// 'models/User',
-	'models/Model',
+	'models/User',
 	// 'text!templates/user-name.html',
 	// 'text!templates/user-profile-photo.html',
 	// 'text!templates/user-cover-photo.html',
@@ -10,7 +9,7 @@ define(['jquery',
 	'text!templates/user-friend-list.html'
 	],
 
-	function($, Backbone, Model, template){
+	function($, Backbone, User, template){
 	// function($, Backbone, User, name, profilePhoto, coverPhoto, city, ranking, friendList){
 
 		var UserProfileView = Backbone.View.extend({
