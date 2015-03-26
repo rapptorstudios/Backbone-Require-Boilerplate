@@ -1,17 +1,14 @@
 define(['jquery',
 	'backbone',
 	'models/User',
-	'text!templates/user-name.html',
-	'text!templates/user-profile-photo.html',
-	'text!templates/user-cover-photo.html',
-	'text!templates/user-city.html',
-	'text!templates/user-ranking.html',
-	'text!templates/user-friend-list.html',
-	'text!templates/patrick-attempt.html'],
+	'text!templates/userinfo/personal-info.html',
+	'text!templates/userinfo/user-club-list.html',
+	'text!templates/userinfo/user-friend-list.html',
+	'text!templates/userinfo/user-info.html',
+	'text!templates/userinfo/user-rank.html',
+	'text!templates/userinfo/user-weapon-list.html'],
 
-	function($, Backbone, User, name, profilePhoto, coverPhoto, city, ranking, friendList, patrick){
-
-		window.console && console.log(new User());
+	function($, Backbone, User, personalInfo, clubList, friendList, info, rank, weaponList){
 
 		var UserProfileView = Backbone.View.extend({
 
@@ -27,23 +24,32 @@ define(['jquery',
 			},
 
 			render: function() {
-				nameTemplate =					_.template(name);
-				profilePhotoTemplate = 	_.template(profilePhoto);
-				coverPhotoTemplate = 		_.template(coverPhoto);
-				cityTemplate = 					_.template(city);
-				rankingTemplate = 			_.template(ranking);
-				friendListTemplate = 		_.template(friendList);
-				patrickTemp = _.template(patrick);
+				var personalInfoTemplate =	_.template(personalInfo);
+				var personalInfoData =			personalInfoTemplate(this.User.toJSON());
 
-				var nameTemplateWithData = nameTemplate(this.User.toJSON());
-				var cityTemplateWithData = cityTemplate(this.User.toJSON());
+				var clubListTemplate =			_.template(clubList);
+				var clubListData =					clubListTemplate(this.User.toJSON());
 
-				var userProfileViewLayout = {
-					nameTemplate: nameTemplateWithData,
-					cityTemplate: cityTemplateWithData
+				var friendListTemplate =		_.template(friendList);
+				var friendListData =				friendListTemplate(this.User.toJSON());
+
+				var userInfoTemplate =			_.template(info);
+
+				var rankTemplate =					_.template(rank);
+				var rankData =							rankTemplate(this.User.toJSON());
+
+				var weaponListTemplate =		_.template(weaponList);
+				var weaponListData =				weaponListTemplate(this.User.toJSON());
+
+				var userProfile = {
+					personalInfoTemplate: personalInfoData,
+					clubListTemplate: clubListData,
+					friendListTemplate: friendListData,
+					rankTemplate: rankData,
+					weaponListTemplate: weaponListData
 				}
 
-				this.$el.html(patrickTemp(userProfileViewLayout));
+				this.$el.html(userInfoTemplate(userProfile));
 
 				// Maintains chainability
 				return this;
