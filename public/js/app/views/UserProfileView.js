@@ -49,6 +49,8 @@ define(['jquery',
 					weaponListTemplate: weaponListData
 				}
 
+				console.log(this);
+
 				this.$el.html(userInfoTemplate(userProfile));
 
 				// Maintains chainability

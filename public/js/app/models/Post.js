@@ -10,11 +10,18 @@ define(['jquery', 'backbone'],
 			},
 
 			defaults: {
+				authorinfo: {
+					name: 	'Frank Warren',
+					photo: 	'http://placehold.it/50x50',
+					date: 	'June 1, 2015'
+				},
 
-			},
-
-			validate: function(attrs) {
-
+				comment: {
+					name: 	'Sally Heinz',
+					photo: 	'http://placehold.it/50x50',
+					date: 	'June 1, 2015',
+					message: 'Hey there!!'
+				}
 			}
 
 		});

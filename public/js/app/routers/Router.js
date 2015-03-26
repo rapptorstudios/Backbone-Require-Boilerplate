@@ -18,11 +18,12 @@ define([
 
 	// VIEWS
 	'views/CoolView',
+	'views/PostView',
 	'views/UserProfileView',
 	'views/View'
 	],
 
-	function($, Backbone, Club, Comment, Model, Post, User, Clubs, Collection, Comments, Posts, Users, CoolView, UserProfileView, View) {
+	function($, Backbone, Club, Comment, Model, Post, User, Clubs, Collection, Comments, Posts, Users, CoolView, PostView, UserProfileView, View) {
 
 		var Router = Backbone.Router.extend({
 
@@ -33,6 +34,7 @@ define([
 			routes: {
 				'': 				'index',
 				'cool': 		'renderCool',
+				'post': 		'renderPost',
 				'profile': 	'renderUserProfile'
 			},
 
@@ -42,6 +44,10 @@ define([
 
 			renderCool: function(){
 				new CoolView();
+			},
+
+			renderPost: function(){
+				new PostView();
 			},
 
 			renderUserProfile: function(){
