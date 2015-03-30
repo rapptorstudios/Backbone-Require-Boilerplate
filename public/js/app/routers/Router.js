@@ -9,6 +9,7 @@ define([
 	'models/Model',
 	'models/Post',
 	'models/User',
+	'models/Weapon',
 
 	// COLLECTIONS
 	'collections/Badges',
@@ -16,6 +17,7 @@ define([
 	'collections/Comments',
 	'collections/Posts',
 	'collections/Users',
+	'collections/Weapons',
 
 	// VIEWS
 	'views/CoolView',
