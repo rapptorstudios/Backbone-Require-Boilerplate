@@ -6,6 +6,7 @@ define([
 	'models/Badge',
 	'models/Club',
 	'models/Comment',
+	'models/Location',	
 	'models/Model',
 	'models/Post',
 	'models/User',
@@ -15,6 +16,7 @@ define([
 	'collections/Badges',
 	'collections/Clubs',
 	'collections/Comments',
+	'collections/Locations',	
 	'collections/Posts',
 	'collections/Users',
 	'collections/Weapons',
@@ -26,7 +28,7 @@ define([
 	'views/View'
 	],
 
-	function($, Backbone, Badge, Club, Comment, Model, Post, User, Badges, Clubs, Comments, Posts, Users, CoolView, PostView, UserProfileView, View) {
+	function($, Backbone, Badge, Club, Comment, Location, Model, Post, User, Weapon, Badges, Clubs, Comments, Locations, Posts, Users, Weapons, CoolView, PostView, UserProfileView, View) {
 
 		var Router = Backbone.Router.extend({
 
