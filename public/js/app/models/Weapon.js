@@ -16,7 +16,7 @@ define(['jquery', 'backbone'],
 					caliber: '9mm',
 					gauge: '.40 S&W',
 					sights: 'Night sights',
-					trigger: 'Double action'
+					trigger: 'Double action',
 
 					ammunition: {
 						brand: 'Ammunition brand'
