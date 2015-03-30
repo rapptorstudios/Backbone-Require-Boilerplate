@@ -10,11 +10,16 @@ define(['jquery', 'backbone'],
 			},
 
 			defaults: {
+				name: 'Space City Hunt Club',
+				coverphoto:	'http://placehold.it/350x350',
 
-			},
+				location: {
+					onlineOnly: false, // boolean used to determine whether location should display
+					city: 'Houston',
+					state: 'TX'
+				},
 
-			validate: function(attrs) {
-
+				memberlist: 'load memberlist here' // collection of users 
 			}
 
 		});
