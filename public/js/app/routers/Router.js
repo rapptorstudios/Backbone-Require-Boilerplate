@@ -22,13 +22,14 @@ define([
 	'collections/Weapons',
 
 	// VIEWS
+	'views/ClubProfileView',	
 	'views/CoolView',
 	'views/PostView',
 	'views/UserProfileView',
 	'views/View'
 	],
 
-	function($, Backbone, Badge, Club, Comment, Location, Model, Post, User, Weapon, Badges, Clubs, Comments, Locations, Posts, Users, Weapons, CoolView, PostView, UserProfileView, View) {
+	function($, Backbone, Badge, Club, Comment, Location, Model, Post, User, Weapon, Badges, Clubs, Comments, Locations, Posts, Users, Weapons, ClubProfileView, CoolView, PostView, UserProfileView, View) {
 
 		var Router = Backbone.Router.extend({
 
@@ -38,6 +39,7 @@ define([
 
 			routes: {
 				'': 				'index',
+				'club': 		'renderClub',
 				'cool': 		'renderCool',
 				'post': 		'renderPost',
 				'profile': 	'renderUserProfile'
@@ -45,6 +47,10 @@ define([
 
 			index: function() {
 				new View();
+			},
+			
+			renderClub: function(){
+				new ClubProfileView();
 			},
 
 			renderCool: function(){
